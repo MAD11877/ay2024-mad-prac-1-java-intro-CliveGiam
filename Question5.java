@@ -1,5 +1,5 @@
 import java.util.Scanner;
-
+import java.util.ArrayList;
 public class Question5
 {
   public static void main(String[] args)
@@ -28,18 +28,18 @@ public class Question5
 
     Scanner in = new Scanner(System.in);
     Integer quantity = in.nextInt();
-    Integer[] array = {};
-    Integer[] frequency = {};
+    ArrayList<Integer> array = new ArrayList<Integer>();
+    ArrayList<Integer> frequency = new ArrayList<Integer>();
     
     for (int i = 0; i < quantity; i++)
     {
       Integer next = in.nextInt();
-      array[i] = next;
+      array.add(next);
     }
     
     for (int j = 0; j < quantity; j++)
     {
-      Integer comparison = array[j];
+      Integer comparison = array.get(j);
       Integer count = 0;
       for (int x : array)
       {
@@ -48,7 +48,7 @@ public class Question5
           count += 1;
         }
       }
-      frequency[j] = count;
+      frequency.add(count);
     }
 
     Integer index = 0;
@@ -56,15 +56,15 @@ public class Question5
     {
       if (y == 0)
       {
-        index = frequency[y];
+        index = frequency.get(y);
         continue;
       }
-      if (frequency[y] > index)
+      if (frequency.get(y) > index)
       {
-        index = frequency[y];
+        index = frequency.get(y);
       }
     }
 
-    System.out.println(array[index]);
+    System.out.println(array.get(index));
   }
 }
