@@ -28,8 +28,8 @@ public class Question5
 
     Scanner in = new Scanner(System.in);
     Integer quantity = in.nextInt();
-    int[] array = {};
-    int[] frequency = {};
+    Integer[] array = {};
+    Integer[] frequency = {};
     
     for (int i = 0; i < quantity; i++)
     {
@@ -40,15 +40,15 @@ public class Question5
     for (int j = 0; j < quantity; j++)
     {
       Integer comparison = array[j];
+      Integer count = 0;
       for (int x : array)
       {
-        Integer count = 0;
         if (comparison == x)
         {
           count += 1;
         }
-        frequency[j] = count;
       }
+      frequency[j] = count;
     }
 
     Integer index = 0;
