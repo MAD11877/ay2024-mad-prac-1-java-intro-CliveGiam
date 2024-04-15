@@ -1,5 +1,5 @@
 import java.util.Scanner;
-
+import java.util.ArrayList;
 public class Question5
 {
   public static void main(String[] args)
@@ -25,8 +25,48 @@ public class Question5
      *     2
      * Hint: Use a loop to get input. Use another 2 loops to find the mode
      */
-     
+
     Scanner in = new Scanner(System.in);
+    Integer quantity = in.nextInt();
+    ArrayList<Integer> array = new ArrayList<Integer>();
+    ArrayList<Integer> frequency = new ArrayList<Integer>();
     
+    for (int i = 0; i < quantity; i++)
+    {
+      Integer next = in.nextInt();
+      array.add(next);
+    }
+    
+    for (int j = 0; j < quantity; j++)
+    {
+      Integer comparison = array.get(j);
+      Integer count = 0;
+      for (int x : array)
+      {
+        if (comparison == x)
+        {
+          count += 1;
+        }
+      }
+      frequency.add(count);
+    }
+
+    Integer index = 0;
+    Integer check = 0;
+    for (int y = 0; y < quantity; y++)
+    {
+      if (y == 0)
+      {
+        check = frequency.get(y);
+        index = y;
+        continue;
+      }
+      if (frequency.get(y) > check)
+      {
+        index = y;
+      }
+    }
+
+    System.out.println(array.get(index));
   }
 }
