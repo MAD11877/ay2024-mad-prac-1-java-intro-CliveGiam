@@ -52,16 +52,18 @@ public class Question5
     }
 
     Integer index = 0;
+    Integer check = 0;
     for (int y = 0; y < quantity; y++)
     {
       if (y == 0)
       {
-        index = frequency.get(y);
+        check = frequency.get(y);
+        index = y;
         continue;
       }
-      if (frequency.get(y) > index)
+      if (frequency.get(y) > check)
       {
-        index = frequency.get(y);
+        index = y;
       }
     }
 
