@@ -1,6 +1,5 @@
 import java.util.Scanner;
 
-
 public class Question5
 {
   public static void main(String[] args)
@@ -29,13 +28,15 @@ public class Question5
 
     Scanner in = new Scanner(System.in);
     Integer quantity = in.nextInt();
-    int[] array;
-    int[] frequency;
+    int[] array = {};
+    int[] frequency = {};
+    
     for (int i = 0; i < quantity; i++)
     {
       Integer next = in.nextInt();
       array[i] = next;
     }
+    
     for (int j = 0; j < quantity; j++)
     {
       Integer comparison = array[j];
@@ -49,7 +50,7 @@ public class Question5
         frequency[j] = count;
       }
     }
-    
+
     Integer index = 0;
     for (int y = 0; y < quantity; y++)
     {
@@ -63,7 +64,7 @@ public class Question5
         index = frequency[y];
       }
     }
-    
+
     System.out.println(array[index]);
   }
 }
